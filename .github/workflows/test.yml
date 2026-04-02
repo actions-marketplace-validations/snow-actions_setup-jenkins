@@ -17,7 +17,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         with:
           jenkins_home: test-resources/jenkins_home
@@ -61,7 +61,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
       - run: curl $JENKINS_URL
 
@@ -100,7 +100,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         with:
           jenkins_home: ''
@@ -140,7 +140,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: mkdir -p $RUNNER_TEMP/jenkins_home/
       - run: cp test-resources/jenkins.yaml $RUNNER_TEMP/jenkins_home/
       - uses: ./
@@ -179,7 +179,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: mkdir -p $RUNNER_TEMP/jenkins_home/
       - run: cp test-resources/jenkins.yaml $RUNNER_TEMP/jenkins_home/
       - run: echo "SECRET_TEXT=${{ secrets.SECRET_TEXT }}" >> container.env
@@ -212,7 +212,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         with:
           plugins: |
@@ -231,7 +231,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         with:
           plugins: ''
